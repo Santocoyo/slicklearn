@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>SlickLearn</title>
+        <link rel="stylesheet" href="/assets/css/app.css">
+    </head>
+
+    <body>
+        <%- include("../components/navbar.ejs") -%>
+
+        <div class="container">
+            <h1>Login</h1>
+
+            <div class="form">
+                <input id="username-input" type="text" placeholder="username">
+                <input id="email-input" type="email" placeholder="email">
+                <input id="firstname-input" type="text" placeholder="first name">
+                <input id="lastname-input" type="text" placeholder="last name">
+                <input id="password-input" type="password" placeholder="password">
+            
+                <button class="btn" onclick="submitRegister()">Register</button>
+            </div>
+        </div>
+        
+
+        <script src="/assets/js/app.js"></script>
+    </body>
+</html>
