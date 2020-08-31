@@ -37,6 +37,6 @@ app.use(require("./routes/login.routes"));
 app.use(require("./routes/main.routes"));
 
 // Listen
-app.listen(80, () => {
-    console.log("app listening on port 80");
+app.listen(8080, () => {
+    console.log("app listening on port 8080");
 })
