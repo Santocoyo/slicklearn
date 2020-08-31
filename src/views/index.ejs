@@ -1,17 +1,15 @@
-<html>
-    <head>
-        <title>SlickLearn</title>
-        <link rel="stylesheet" href="/assets/css/app.css">
-    </head>
+<!-- Modular header included in /views/partials -->
+        <%- include("./partials/header.ejs") -%>
+        <!-- <%- include("../components/navbar.ejs") -%> -->
 
-    <body>
-        <%- include("../components/navbar.ejs") -%>
-
-        <div class="hero">
-            <h1>Bienvenido estudiante</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo magni libero consequuntur dignissimos aliquam ratione porro est voluptatum eaque veritatis rem eveniet quaerat enim, illum adipisci sequi. Magni, minima rem?</p>
-        
-            <button class="btn">Comienza a estudiar</button>
+        <div class="container">
+            <div class="jumbotron text-center mt-5">
+                <h1>Bienvenido estudiante</h1>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo magni libero consequuntur dignissimos aliquam ratione porro est voluptatum eaque veritatis rem eveniet quaerat enim, illum adipisci sequi. Magni, minima rem?</p>
+            
+                <button class="btn btn-info">Comienza a estudiar</button>
+            </div>
         </div>
 
         <div class="container">
