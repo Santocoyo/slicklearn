@@ -1,8 +1,8 @@
-const express = require("express");
-const path = require("path");
-const morgan = require("morgan");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+import express from 'express';
+import path from 'path';
+import morgan from 'morgan';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
 
 // Objects
 const app = express();
@@ -30,10 +30,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 // Static files
 app.use("/assets", express.static(path.join(__dirname, "static")));
 
+// API Routes
+app.use(require("./api/api_courses.routes"));
+app.use(require("./api/api_login.routes"));
+
 // Routes
-app.use(require("./routes/api_courses.routes"));
-app.use(require("./routes/api_login.routes"));
 app.use(require("./routes/login.routes"));
+app.use(require("./routes/admin.routes"));
 app.use(require("./routes/main.routes"));
 
 // Listen

@@ -1,4 +1,4 @@
-const Course = require("../models/course.model");
+import Course from '../models/course.model';
 
 exports.addCourse = (body) => {
     return new Promise(async (resolve, reject) => {
@@ -24,8 +24,8 @@ exports.addCourse = (body) => {
 
 exports.getCourses = (pag) => {
     return new Promise (async (resolve, reject) => {
-        // ToDo
-        const list = Course;
+        const list = await Course.find();
+        resolve(list);
     });
 }
 

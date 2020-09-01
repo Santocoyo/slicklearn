@@ -1,12 +1,12 @@
-const express = require("express");
-const Router = express.Router();
+import { Router } from 'express';
+const router = Router();
 
-Router.get("/", (req, res) => {
+router.get("/", (req, res) => {
     res.render("index");
 })
 
-Router.all("*", (req, res) => {
+router.all("*", (req, res) => {
     res.render("404");
 });
 
-module.exports = Router;
+module.exports = router;

@@ -55,17 +55,13 @@ body {
 } */
 
 .course-item {
-    width: 360px;
+    width: 320px;
+    height: 350px;
     background-color: #ccc;
     border-radius: 30px;
     display: inline-block;
     margin: 20px;
     cursor: pointer;
-}
-
-.course-list {
-    width: 90%;
-    margin: auto;
 }
 
 .course-name {
@@ -75,14 +71,25 @@ body {
 
 .course-banner {
     width: 100%;
-    margin-bottom: 20px;
 }
 
 .course-container {
     padding: 20px;
 }
 
-/* .btn {
+#root {
+    display: block;
+    margin-top: 100px;
+}
+
+.form {
+    width: 30%;
+    text-align: center;
+    margin: auto;
+}
+
+/*
+.btn {
     background-color: #373CF8;
     outline: none;
     border: none;
@@ -92,7 +99,7 @@ body {
     font-size: 17px;
     cursor: pointer;
     border-radius: 10px;
-} */
+}*/
 
 .course-desc {
     margin-bottom: 10px;

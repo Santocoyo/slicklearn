@@ -1,0 +1,14 @@
+<!-- Modular header included in /views/partials -->
+        <%- include("./partials/header.ejs") -%>
+        <!-- <%- include("../components/navbar.ejs") -%> -->
+    <h1> SOY ADMIN </h1>
+<hr>
+
+<h2>Añadir curso</h2>
+<input type="text" id="course-name-input" placeholder="Nombre del curso"> </br>
+<textarea id="course-description-input">Descripciond el curso</textarea><br/>
+<button class="btn" onclick="submitCreateCourse()">Crear curso</button>
+
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/admin_panel.js"></script>
+</body>

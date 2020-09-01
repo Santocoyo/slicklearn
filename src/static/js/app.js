@@ -1,4 +1,5 @@
 const courseList = document.getElementById("course-list");
+const alertBox = document.getElementById("alert-box");
 
 function addCourse (name, description) {
     courseList.innerHTML += `
@@ -9,7 +10,7 @@ function addCourse (name, description) {
             <span class="course-name">${name}</span>
             <p class="course-desc">${description}</p>
     
-            <button class="btn">Boton</button>
+            <button class="btn btn-primary">Boton</button>
         </div>
     </div>
     `
@@ -30,6 +31,9 @@ async function fetchForCourses () {
 }
 
 async function submitLogin () {
+
+    cleanAlert();
+
     const email = getValue("email");
     const password = getValue("password");
 
@@ -39,9 +43,9 @@ async function submitLogin () {
 
     const data = JSON.parse(request);
     if (data.success) {
-        alert("Logeo exitoso! bienvenido de vuelta " + data.user.username)
+        showSuccess("Logeo exitoso! bienvenido de vuelta " + data.user.username);
     } else {
-        alert(data.error);
+        showError(data.error);
     }
 
     console.log(request);
@@ -53,6 +57,9 @@ function getValue (id) {
 }
 
 async function submitRegister () {
+
+    cleanAlert();
+
     const email = getValue("email");
     const password = getValue("password");
     const firstName = getValue("firstname");
@@ -65,9 +72,9 @@ async function submitRegister () {
 
     const data = JSON.parse(request);
     if (data.success) {
-        alert("Registro exitoso!  bienvenido " + username)
+        showSuccess("Registro exitoso!  bienvenido " + username)
     } else {
-        alert(data.error);
+        showError(data.error);
     }
     
     console.log(request);
@@ -108,6 +115,18 @@ function GET (url) {
         http.open("GET", url);
         http.send();
     });
+}
+
+function showError (text) {
+    alertBox.innerHTML = `<div class="alert alert-danger"role="alert">${text}</div>`;
+}
+
+function showSuccess (text) {
+    alertBox.innerHTML = `<div class="alert alert-success"role="alert">${text}</div>`;
+}
+
+function cleanAlert () {
+    alertBox.innerHTML = ``;
 }
 
 window.addEventListener("load", () => {
